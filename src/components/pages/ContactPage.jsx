@@ -12,7 +12,7 @@ export default function ContactPage() {
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative text-4xl md:text-5xl font-extrabold text-white z-10">
+        <h1 className="relative text-4xl md:text-5xl font-extrabold text-[#7ED957]">
           আমাদের সাথে যোগাযোগ করুন
         </h1>
       </div>
@@ -33,7 +33,7 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <Phone className="w-6 h-6 text-[#7ED957]" />
-              <span className="text-lg text-gray-800">+৮৮০ ১২৩৪৫৬৭৮৯০</span>
+              <span className="text-lg text-gray-800">+8801725548150</span>
             </div>
             <div className="flex items-center gap-4">
               <Mail className="w-6 h-6 text-[#7ED957]" />

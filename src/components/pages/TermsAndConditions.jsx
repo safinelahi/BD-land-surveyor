@@ -1,4 +1,4 @@
-export default function TermsAndConditions() {
+const TermsAndConditions = () => {
   return (
     <div className=" bg-[#F5F3ED] min-h-screen py-16 px-6">
       {/* Hero Section */}
@@ -110,4 +110,6 @@ export default function TermsAndConditions() {
       </div>
     </div>
   );
-}
+};
+
+export default TermsAndConditions;
