@@ -9,7 +9,6 @@ import SignUpPage from './components/pages/SignupPage.jsx'
 import TermsAndConditions from './components/pages/TermsAndConditions.jsx'
 import WorkerDetails from './components/pages/WorkerDetails.jsx'
 
-import About from './components/pages/About.jsx'
 import ContactPage from './components/pages/ContactPage.jsx'
 import './index.css'
 
@@ -24,6 +23,5 @@ createRoot(document.getElementById('root')).render(
     <SignUpPage></SignUpPage>
     <TermsAndConditions></TermsAndConditions>
     <ContactPage></ContactPage>
-    <About></About>
   </StrictMode>,
 )
