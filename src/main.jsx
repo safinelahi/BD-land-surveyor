@@ -11,13 +11,11 @@ import WorkerDetails from './components/pages/WorkerDetails.jsx'
 
 import About from './components/pages/About.jsx'
 import ContactPage from './components/pages/ContactPage.jsx'
-import NavBar from './components/pages/NavBar.jsx'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    <NavBar></NavBar>
     <Home></Home>
     <Cart></Cart>
     <Footer></Footer>
