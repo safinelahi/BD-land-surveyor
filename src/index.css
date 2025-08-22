@@ -8,7 +8,7 @@ body {
 
 @import "tailwindcss";
 
-/* Remove fixed width */
+
 body {
   margin: 0;
   font-family: sans-serif;

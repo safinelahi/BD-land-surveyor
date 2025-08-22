@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiSearch, FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import logoImage from "../../assets/icons/জমি জগ 1.jpg";
 import heroImage from "../../assets/images/hero page.jpg";
 
@@ -8,8 +8,8 @@ const Home = () => {
 
   return (
     <div className="overflow-x-hidden bg-white">
-      {/* ===== Navbar ===== */}
-      <header className="flex items-center justify-between px-4 sm:px-8 py-4 border-b border-gray-200">
+      {/*  Navbar  */}
+      <header className="flex items-center justify-between px-4 sm:px-[8%] py-4 border-b border-gray-200">
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
@@ -27,7 +27,7 @@ const Home = () => {
           <a href="#" className="hover:text-[#7ED957] transition">জ্ঞাতব্য</a>
         </nav>
 
-        {/* Search + Login (desktop only) */}
+        {/* Search + Login (desktop) */}
         <div className="hidden md:flex items-center gap-3">
           <div className="flex items-center w-64 bg-[#f5f5eb] rounded-lg px-3 py-2 border border-gray-200">
             <FiSearch className="text-gray-500 mr-2 text-lg" />
@@ -37,7 +37,7 @@ const Home = () => {
               className="bg-transparent focus:outline-none text-gray-700 w-full text-base"
             />
           </div>
-          <button className="text-white font-semibold text-base bg-[#7ED957] px-6 py-3 rounded-lg hover:opacity-90 transition shadow-md">
+          <button className="text-white font-semibold text-base bg-[#7ED957] px-6 py-3 rounded-lg hover:opacity-90 transition">
             লগইন
           </button>
         </div>
@@ -51,7 +51,7 @@ const Home = () => {
         </button>
       </header>
 
-      {/* ===== Mobile Menu ===== */}
+      {/*  Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-4 py-4 bg-white border-b border-gray-200 space-y-4">
           <nav className="flex flex-col gap-3 text-[#151515] text-base font-medium">
@@ -76,7 +76,7 @@ const Home = () => {
         </div>
       )}
 
-      {/* ===== Hero Section ===== */}
+      {/*  Hero Section  */}
       <section className="mt-6 px-4 sm:px-8">
         <img
           src={heroImage}
@@ -85,7 +85,7 @@ const Home = () => {
         />
       </section>
 
-      {/* ===== Divisions Section ===== */}
+      {/*  Divisions Section  */}
       <section className="px-4 sm:px-8 mt-10 mb-16">
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#151515] mb-6">
           বিভাগসমূহ
