@@ -6,22 +6,20 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div
-        className="relative w-full h-[300px] flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${landImage})`,
-        }}
+        className="relative w-full h-[250px] sm:h-[300px] flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${landImage})` }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative text-4xl md:text-5xl font-extrabold text-[#7ED957]">
+        <h1 className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#7ED957] text-center px-4">
           আমাদের সাথে যোগাযোগ করুন
         </h1>
       </div>
 
       {/* Contact Info + Form */}
-      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left Side - Info */}
         <div>
-          <h2 className="text-2xl font-bold text-[#7ED957] mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957] mb-6">
             যোগাযোগের তথ্য
           </h2>
           <p className="text-gray-700 mb-6 leading-relaxed">
@@ -41,16 +39,14 @@ export default function ContactPage() {
             </div>
             <div className="flex items-center gap-4">
               <MapPin className="w-6 h-6 text-[#7ED957]" />
-              <span className="text-lg text-gray-800">
-                রাজশাহী, বাংলাদেশ
-              </span>
+              <span className="text-lg text-gray-800">রাজশাহী, বাংলাদেশ</span>
             </div>
           </div>
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-white shadow-lg rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-[#7ED957] mb-6">
+        <div className="bg-white shadow-lg rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957] mb-6">
             মেসেজ পাঠান
           </h2>
           <form className="space-y-5">
@@ -59,7 +55,7 @@ export default function ContactPage() {
               <input
                 type="text"
                 placeholder="আপনার নাম লিখুন"
-                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-1 focus:ring-[#7ED957]"
+                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-2 focus:ring-[#7ED957]"
               />
             </div>
 
@@ -68,7 +64,7 @@ export default function ContactPage() {
               <input
                 type="email"
                 placeholder="আপনার ইমেইল লিখুন"
-                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-1 focus:ring-[#7ED957]"
+                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-2 focus:ring-[#7ED957]"
               />
             </div>
 
@@ -77,7 +73,7 @@ export default function ContactPage() {
               <input
                 type="text"
                 placeholder="মেসেজের বিষয় লিখুন"
-                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-1 focus:ring-[#7ED957]"
+                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-2 focus:ring-[#7ED957]"
               />
             </div>
 
@@ -86,13 +82,13 @@ export default function ContactPage() {
               <textarea
                 rows="5"
                 placeholder="আপনার মেসেজ লিখুন"
-                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-1 focus:ring-[#7ED957]"
+                className="w-full p-3 border-2 border-[#7ED957] rounded-lg outline-none focus:ring-2 focus:ring-[#7ED957]"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 bg-[#7ED957] text-white font-semibold rounded-lg "
+              className="w-full py-3 bg-[#7ED957] text-black font-semibold rounded-lg hover:bg-green-600 transition-colors"
             >
               মেসেজ পাঠান
             </button>
@@ -101,7 +97,7 @@ export default function ContactPage() {
       </div>
 
       {/* Footer */}
-      <div className="py-6 text-center ">
+      <div className="py-6 text-center">
         <p className="text-gray-600 text-sm">
           © ২০২৫ <span className="text-[#7ED957] font-bold">জমিযোগ</span> ।
           সর্বস্বত্ব সংরক্ষিত

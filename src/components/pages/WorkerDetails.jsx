@@ -9,16 +9,20 @@ const WorkerDetails = () => {
   return (
     <div className="bg-[#F5F3ED]">
       {/* workers details section */}
-      <div className=" grid grid-cols-2 gap-[100px] items-center px-[12%] py-[3%] ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[100px] items-center px-6 sm:px-[8%] py-8 md:py-[3%]">
         {/* image section */}
-        <div>
-          <img src={workersImages} alt="" />
+        <div className="flex justify-center md:justify-start">
+          <img
+            src={workersImages}
+            alt="Surveyor"
+            className="w-full max-w-[400px] rounded-lg"
+          />
         </div>
 
         {/* workers details section */}
-        <div className="">
+        <div>
           {/* Stars */}
-          <div className=" flex items-center text-[#7ED957] text-4xl ">
+          <div className="flex items-center text-[#7ED957] text-2xl sm:text-3xl md:text-4xl">
             {Array(5)
               .fill()
               .map((_, i) => (
@@ -27,13 +31,14 @@ const WorkerDetails = () => {
           </div>
 
           {/* name */}
-          <h1 className=" text-4xl my-[25px] ">মোহাম্মদ জাহাঙ্গীর আলম</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl my-4 md:my-[25px]">
+            মোহাম্মদ জাহাঙ্গীর আলম
+          </h1>
 
           {/* Location, Age, Price */}
-          <div className="flex  items-center gap-[26px] mb-[22px] ">
-
+          <div className="flex flex-wrap items-center gap-5 mb-5">
             {/* location */}
-            <div className="flex items-center text-gray-600 text-[16px] gap-[10px]  ">
+            <div className="flex items-center text-gray-600 text-sm sm:text-base gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -46,38 +51,40 @@ const WorkerDetails = () => {
                   fill="#7ED957"
                 />
               </svg>
-              <span className="">রেলগেট, রাজশাহী</span>
+              <span>রেলগেট, রাজশাহী</span>
             </div>
 
-            {/* age of experience*/}
-            <div className="flex items-center text-gray-600 text-[16px] gap-[10px] ">
-              <img src={experienceIcon} alt="" />
+            {/* age of experience */}
+            <div className="flex items-center text-gray-600 text-sm sm:text-base gap-2">
+              <img src={experienceIcon} alt="Experience" className="w-6 h-6" />
               <h1>৬+ বছর</h1>
             </div>
           </div>
 
           {/* Price */}
-          <div className="flex items-center text-gray-600 text-[16px] mb-[12px] ">
-            <img src={priceIcon} alt="" />
-            <span className=" ml-[5px] "> অর্ধেক বেলা - ২০০০ টাকা-/-</span>
-          </div>
-          <div className="flex items-center text-gray-600 text-[16px] ">
-            <img src={priceIcon} alt="" />
-            <span className=" ml-[5px] ">সম্পূর্ণ বেলা- ৪০০০ টাকা/-</span>
+          <div className="space-y-2 text-sm sm:text-base text-gray-600">
+            <div className="flex items-center">
+              <img src={priceIcon} alt="Price" className="w-6 h-6" />
+              <span className="ml-2">অর্ধেক বেলা - ২০০০ টাকা/-</span>
+            </div>
+            <div className="flex items-center">
+              <img src={priceIcon} alt="Price" className="w-6 h-6" />
+              <span className="ml-2">সম্পূর্ণ বেলা - ৪০০০ টাকা/-</span>
+            </div>
           </div>
 
           {/* booking button */}
-          <button className="bg-[#7ED957] text-white py-[12px] px-[50px] rounded-lg font-semibold text-[17px] mt-[25px] ">
+          <button className="bg-[#7ED957] text-white py-3 px-10 rounded-lg font-semibold text-base sm:text-lg mt-6">
             বুক দিন
           </button>
         </div>
       </div>
 
       {/* information of land surveyor */}
-      <div className=" flex justify-between px-[52px] pb-[3%] ">
-        <div>
-          <img src={infoImage1} alt="" />
-          <ul className="list-disc list-inside leading-relaxed mt-[30px] text-[18px] space-y-[6px] ">
+      <div className="flex flex-col md:flex-row justify-between gap-10 px-6 sm:px-[8%] pb-10">
+        <div className="flex-1">
+          <img src={infoImage1} alt="Tools" className="w-full max-w-[450px]" />
+          <ul className="list-disc list-inside leading-relaxed mt-6 text-base sm:text-lg space-y-2">
             <li>
               জিআইএস (Geographic Information System) মানচিত্র ও বিশ্লেষণের জন্য।
             </li>
@@ -88,9 +95,9 @@ const WorkerDetails = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <img src={infoImage2} alt="" />
-          <ul  className=" font-dmStand  list-disc list-inside leading-relaxed mt-[30px] text-[18px] space-y-[6px] ">
+        <div className="flex-1">
+          <img src={infoImage2} alt="Problems" className="w-full max-w-[450px]" />
+          <ul className="list-disc list-inside leading-relaxed mt-6 text-base sm:text-lg space-y-2">
             <li>অবৈধ দখল ও জমির মালিকানা সংক্ৰান্ত বিরোধ</li>
             <li>সঠিক তথ্যের অভাব ও দুর্নীতি</li>
             <li>আধুনিক প্রযুক্তির পর্যাপ্ত ব্যবহার না থাকা</li>
