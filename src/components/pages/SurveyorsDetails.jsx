@@ -5,21 +5,21 @@ import infoImage2 from "../../assets/images/Frame 74.png";
 import infoImage1 from "../../assets/images/Frame 75.png";
 import workersImages from "../../assets/images/image_big.png";
 
-const WorkerDetails = () => {
+const SurveyorsDetails = () => {
   return (
     <div className="bg-[#F5F3ED]">
-      {/* workers details section */}
+      {/* Surveyors details section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[100px] items-center px-6 sm:px-[8%] py-8 md:py-[3%]">
         {/* image section */}
         <div className="flex justify-center md:justify-start">
           <img
             src={workersImages}
             alt="Surveyor"
-            className="w-full max-w-[400px] rounded-lg"
+            className="w-full max-w-[400px] md:max-w-[500px]  rounded-lg"
           />
         </div>
 
-        {/* workers details section */}
+        {/* Surveyors details section */}
         <div>
           {/* Stars */}
           <div className="flex items-center text-[#7ED957] text-2xl sm:text-3xl md:text-4xl">
@@ -83,7 +83,7 @@ const WorkerDetails = () => {
       {/* information of land surveyor */}
       <div className="flex flex-col md:flex-row justify-between gap-10 px-6 sm:px-[8%] pb-10">
         <div className="flex-1">
-          <img src={infoImage1} alt="Tools" className="w-full max-w-[450px]" />
+          <img src={infoImage1} alt="Tools" className="w-full max-w-[500px] rounded-md " />
           <ul className="list-disc list-inside leading-relaxed mt-6 text-base sm:text-lg space-y-2">
             <li>
               জিআইএস (Geographic Information System) মানচিত্র ও বিশ্লেষণের জন্য।
@@ -96,7 +96,7 @@ const WorkerDetails = () => {
           </ul>
         </div>
         <div className="flex-1">
-          <img src={infoImage2} alt="Problems" className="w-full max-w-[450px]" />
+          <img src={infoImage2} alt="Problems" className="w-full max-w-[500px] rounded-md" />
           <ul className="list-disc list-inside leading-relaxed mt-6 text-base sm:text-lg space-y-2">
             <li>অবৈধ দখল ও জমির মালিকানা সংক্ৰান্ত বিরোধ</li>
             <li>সঠিক তথ্যের অভাব ও দুর্নীতি</li>
@@ -108,4 +108,4 @@ const WorkerDetails = () => {
   );
 };
 
-export default WorkerDetails;
+export default SurveyorsDetails;

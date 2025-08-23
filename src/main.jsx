@@ -6,8 +6,12 @@ import About from "./components/pages/About.jsx";
 import ContactPage from "./components/pages/ContactPage.jsx";
 import Footer from "./components/pages/Footer.jsx";
 import Home from "./components/pages/Home.jsx";
-import WorkerDetails from "./components/pages/WorkerDetails.jsx";
+import LoginPage from "./components/pages/LoginPage.jsx";
+import SignUpPage from "./components/pages/SignupPage.jsx";
+import TermsAndConditions from "./components/pages/TermsAndConditions.jsx";
 
+
+import SurveyorsDetails from "./components/pages/SurveyorsDetails.jsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
@@ -16,11 +20,11 @@ createRoot(document.getElementById("root")).render(
     <Home></Home>
     <Cart></Cart>
     <Footer></Footer>
-    <WorkerDetails></WorkerDetails>
+    <SurveyorsDetails></SurveyorsDetails>
     <About></About>
     <ContactPage></ContactPage>
-    {/* <LoginPage></LoginPage>
+    <TermsAndConditions></TermsAndConditions>
+    <LoginPage></LoginPage>
     <SignUpPage></SignUpPage>
-    <TermsAndConditions></TermsAndConditions> */}
   </StrictMode>
 );

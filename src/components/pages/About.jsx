@@ -26,7 +26,7 @@ const About = () => {
             কোম্পানি ওভারভিউ
           </h2>
           <p className="text-base sm:text-lg leading-relaxed">
-            <span className="text-[#7ED957] font-semibold">Map Mentors</span>{" "}
+            <span className="text-[#7ED957] font-semibold">জমিযোগ</span>{" "}
             হলো একটি বিশ্বস্ত অনলাইন প্ল্যাটফর্ম যেখানে আপনি সহজে{" "}
             <span className="text-[#7ED957]">যোগ্য ও অনুমোদিত সার্ভেয়ার</span>{" "}
             বুক করতে পারবেন। জমি সংক্রান্ত সমস্যাগুলো সমাধান করা এবং স্বচ্ছ সেবা

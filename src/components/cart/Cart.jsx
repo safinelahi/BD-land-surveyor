@@ -138,11 +138,17 @@ const Cart = () => {
             <span className="ml-1">{price}/-</span>
           </div>
         </div>
-
-        {/* Button */}
-        <button className="w-full bg-[#7ED957] text-white py-2 sm:py-3 rounded-lg font-semibold hover:opacity-90 transition">
-          বুক দিন
-        </button>
+        {/* button section */}
+        <div className="flex gap-2.5">
+          {/* Button */}
+          <button className="w-full bg-[#7ED957] text-white py-2 sm:py-3 rounded-lg font-semibold hover:opacity-90 transition">
+            বিস্তারিত
+          </button>
+          {/* Button */}
+          <button className="w-full bg-[#7ED957] text-white py-2 sm:py-3 rounded-lg font-semibold hover:opacity-90 transition">
+            বুক দিন
+          </button>
+        </div>
       </div>
     </div>
   );
