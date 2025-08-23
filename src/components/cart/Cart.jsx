@@ -1,16 +1,94 @@
 import { FaStar } from "react-icons/fa";
 import experienceIcon from "../../assets/icons/Experience.jpg";
 import priceIcon from "../../assets/icons/Price.jpg";
-import image from "../../assets/images/image.png";
+import Surveyor_02 from "../../assets/images/surveyor02.png";
+import Surveyor_04 from "../../assets/images/surveyor04.png";
+import Surveyor_05 from "../../assets/images/surveyor05.png";
+import Surveyor_06 from "../../assets/images/surveyor06.png";
+import Surveyor_07 from "../../assets/images/surveyor07.png";
+import Surveyor_08 from "../../assets/images/surveyor08.png";
+import Surveyor_09 from "../../assets/images/surveyor09.png";
+import Surveyor_10 from "../../assets/images/surveyor10.jpg";
 
 const Cart = () => {
+  // Surveyor data
+  const surveyors = [
+    {
+      id: 1,
+      name: "আব্দুল্লাহ আল রুম্মান",
+      age: 26,
+      experience: "৮ বছর",
+      price: "৫০০০",
+      img: Surveyor_10,
+    },
+    {
+      id: 2,
+      name: " ইজাজ আহমেদ ",
+      age: 30,
+      experience: "৫ বছর",
+      price: "৫০০০",
+      img: Surveyor_02,
+    },
+    {
+      id: 3,
+      name: "মনোয়ার হোসাইন",
+      age: 40,
+      experience: "১৫ বছর",
+      price: "৮০০০",
+      img: Surveyor_09,
+    },
+    {
+      id: 4,
+      name: "আবু রায়হান বুলবুল",
+      age: 45,
+      experience: "২০ বছর",
+      price: "৭০০০",
+      img: Surveyor_04,
+    },
+    {
+      id: 5,
+      name: "কবির আহমিদ অপু",
+      age: 32,
+      experience: "৮ বছর",
+      price: "৭০০০",
+      img: Surveyor_05,
+    },
+    {
+      id: 6,
+      name: "মমিনুল ইসলাম",
+      age: 34,
+      experience: "১০ বছর",
+      price: "৮০০০",
+      img: Surveyor_06,
+    },
+    {
+      id: 7,
+      name: "মাজদার আলী",
+      age: 45,
+      experience: "২০ বছর",
+      price: "৭০০০",
+      img: Surveyor_07,
+    },
+    {
+      id: 8,
+      name: "গাউসুল আজম জুম্মা",
+      age: 30,
+      experience: "৭ বছর",
+      price: "৫০০০",
+      img: Surveyor_08,
+    },
+  ];
 
-  // Sample card 
-  const SurveyorCard = () => (
+  // Reusable card
+  const SurveyorCard = ({ name, img, experience, price }) => (
     <div className="bg-white rounded-2xl border border-[#7ed95659] overflow-hidden shadow-sm hover:shadow-md transition">
       {/* Image */}
-      <div className="relative">
-        <img src={image} alt="Surveyor" className="w-full h-auto object-cover" />
+      <div className="relative w-full h-64 flex items-center justify-center bg-white rounded-t-2xl overflow-hidden">
+        <img
+          src={img}
+          alt={name}
+          className="max-h-full max-w-full object-contain"
+        />
       </div>
 
       {/* Info Section */}
@@ -26,13 +104,13 @@ const Cart = () => {
 
         {/* Name */}
         <h2 className="text-base sm:text-lg font-semibold text-gray-800 mt-2">
-          মোহাম্মদ জাহাঙ্গীর আলম
+          {name}
         </h2>
 
-        {/* Location, Age, Price */}
+        {/* Location, experience, Price */}
         <div className="flex flex-wrap items-center my-4 gap-3 text-gray-600 text-xs sm:text-sm">
+          {/* Location */}
           <div className="flex items-center">
-            {/* Location Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -45,17 +123,19 @@ const Cart = () => {
                 fill="#7ED957"
               />
             </svg>
-            <span className="ml-1">রেলগেট, রাজশাহী</span>
+            <span className="ml-1">রাজশাহী</span>
           </div>
 
+          {/* Experience */}
           <div className="flex items-center">
             <img src={experienceIcon} alt="" className="w-4 h-4" />
-            <span className="ml-1">৩৬+ বছর</span>
+            <span className="ml-1">{experience}</span>
           </div>
 
+          {/* Price */}
           <div className="flex items-center">
             <img src={priceIcon} alt="" className="w-4 h-4" />
-            <span className="ml-1">৪০০০/-</span>
+            <span className="ml-1">{price}/-</span>
           </div>
         </div>
 
@@ -76,15 +156,15 @@ const Cart = () => {
       {/* Cards Grid */}
       <div className="px-4 sm:px-8 pb-16">
         <div className="grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {/* multiple cards */}
-          <SurveyorCard />
-          <SurveyorCard />
-          <SurveyorCard />
-          <SurveyorCard />
-          <SurveyorCard />
-          <SurveyorCard />
-          <SurveyorCard />
-          <SurveyorCard />
+          {surveyors.map((surveyor) => (
+            <SurveyorCard
+              key={surveyor.id}
+              name={surveyor.name}
+              img={surveyor.img}
+              experience={surveyor.experience}
+              price={surveyor.price}
+            />
+          ))}
         </div>
       </div>
     </div>
