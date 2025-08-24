@@ -2,7 +2,7 @@ import facebookIcon from "../../assets/icons/facebook.png";
 import instagramIcon from "../../assets/icons/instagram.png";
 import twitterIcon from "../../assets/icons/twitter.png";
 import whatsappIcon from "../../assets/icons/whatsapp.png";
-import logoImage from "../../assets/icons/জমি জগ 2.png";
+import logoImage from "../../assets/icons/জমি জগ_2.png";
 
 const Footer = () => {
   return (

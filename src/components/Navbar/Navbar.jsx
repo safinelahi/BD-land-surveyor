@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { Routes, Route, Link } from "react-router-dom";
 
-import logoImage from "../../assets/icons/জমি জগ 1.jpg";
+import logoImage from "../../assets/icons/জমি জগ_2.png";
 
 function Navbar() {
       const [menuOpen, setMenuOpen] = useState(false);
