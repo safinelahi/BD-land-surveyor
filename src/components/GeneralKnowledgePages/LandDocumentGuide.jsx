@@ -1,16 +1,14 @@
-
 const LandDocumentGuide = () => {
   return (
     <div className="w-full bg-gray-50">
-      {/* ✅ Header Section */}
-      <div className="w-full bg-white shadow-md py-8 px-4 sm:px-8">
+      <div className="w-full bg-white shadow-md py-8 px-4 sm:px-8"></div>
+
+      {/* Content Section */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+        {/* Header Section */}
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#7ED957] text-center">
           দলিল সংক্রান্ত প্রয়োজনীয় তথ্য
         </h1>
-      </div>
-
-      {/* ✅ Content Section */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
         {/* Intro */}
         <section>
           <h2 className="text-xl sm:text-2xl font-semibold text-[#444] mb-3">
@@ -130,7 +128,7 @@ const LandDocumentGuide = () => {
         {/* Numbering Format */}
         <section>
           <h2 className="text-xl sm:text-2xl font-semibold text-[#444] mb-3">
-            জমি বিক্রয় দলিলের Numbering সিস্টেম (আধুনিক ফরম্যাট)
+            জমি বিক্রয় দলিলের আধুনিক ফরম্যাট
           </h2>
           <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 space-y-4 text-gray-700 leading-relaxed">
             <p>
