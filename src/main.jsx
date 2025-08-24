@@ -10,8 +10,6 @@ import LoginPage from "./components/pages/LoginPage.jsx";
 import SignUpPage from "./components/pages/SignupPage.jsx";
 import TermsAndConditions from "./components/pages/TermsAndConditions.jsx";
 
-
-import LandDocumentGuide from "./components/GeneralKnowledgePages/LandDocumentGuide.jsx";
 import GeneralKnowledge from "./components/pages/GeneralKnowledge.jsx";
 import SurveyorsDetails from "./components/pages/SurveyorsDetails.jsx";
 import "./index.css";
@@ -29,7 +27,5 @@ createRoot(document.getElementById("root")).render(
     <LoginPage></LoginPage>
     <SignUpPage></SignUpPage>
     <GeneralKnowledge></GeneralKnowledge>
-    <LandDocumentGuide></LandDocumentGuide>
-    
   </StrictMode>
 );

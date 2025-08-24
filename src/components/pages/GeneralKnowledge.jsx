@@ -1,6 +1,8 @@
 import { useState } from "react";
 import LandBuyingMistakes from "../GeneralKnowledgePages/LandBuyingMistakes";
+import LandDocumentGuide from "../GeneralKnowledgePages/LandDocumentGuide";
 import LandSurveyGuide from "../GeneralKnowledgePages/LandSurveyGuide";
+
 
 const GeneralKnowledge = () => {
   const [activePage, setActivePage] = useState(null);
@@ -8,21 +10,22 @@ const GeneralKnowledge = () => {
   const pages = {
     "জমি ক্রয়ে ভুল সমূহ": <LandBuyingMistakes />,
     "ভূমি জরিপ ও খতিয়ান": <LandSurveyGuide />,
+    "দলিল সংক্রান্ত প্রয়োজনীয় তথ্য": <LandDocumentGuide/>,
   };
 
   return (
     <div className="px-4 sm:px-8 mt-10 mb-16">
-      {/* ✅ Title */}
+      {/* Title */}
       <h2 className="text-lg sm:text-2xl md:text-3xl text-center font-bold text-[#7ED957] mb-12">
         সাধারণ জ্ঞান
       </h2>
 
-      {/* ✅ Button Grid */}
+      {/* Button Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
         {[
           "জমি ক্রয়ে ভুল সমূহ",
           "ভূমি জরিপ ও খতিয়ান",
-          "N/A",
+          "দলিল সংক্রান্ত প্রয়োজনীয় তথ্য",
           "N/A",
           "N/A",
           "N/A",
