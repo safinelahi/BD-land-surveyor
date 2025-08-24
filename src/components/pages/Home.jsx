@@ -25,7 +25,7 @@ const Home = () => {
           <a href="#" className="hover:text-[#7ED957] transition">হোম</a>
           <a href="#" className="hover:text-[#7ED957] transition">সার্ভেয়ার</a>
           <a href="#" className="hover:text-[#7ED957] transition">আমাদের সম্পর্কে</a>
-          <a href="#" className="hover:text-[#7ED957] transition">জ্ঞাতব্য</a>
+          <a href="#" className="hover:text-[#7ED957] transition">সাধারণ জ্ঞান</a>
         </nav>
 
         {/* Search + Login (desktop) */}
@@ -87,7 +87,7 @@ const Home = () => {
       </section>
 
       {/*  Divisions Section  */}
-      <section className="px-4 sm:px-8 mt-10 mb-16">
+      <div className="px-4 sm:px-8 mt-10 mb-16">
         <h2 className="text-lg sm:text-xl md:text-2xl text-center font-bold text-[#151515] mb-8">
           বিভাগসমূহ
         </h2>
@@ -110,7 +110,7 @@ const Home = () => {
             </button>
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 };
