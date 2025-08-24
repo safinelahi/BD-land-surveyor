@@ -23,7 +23,15 @@ const Footer = () => {
           </p>
           <div className="flex mt-6 gap-6 sm:gap-8">
             <img src={twitterIcon} alt="Twitter" className="w-6 sm:w-7" />
-            <img src={facebookIcon} alt="Facebook" className="w-6 sm:w-7" />
+
+            <a
+              href="https://www.facebook.com/people/Jomijog/61580029160200/?sk=about"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={facebookIcon} alt="Facebook" className="w-6 sm:w-7" />
+            </a>
+
             <img src={instagramIcon} alt="Instagram" className="w-6 sm:w-7" />
             <img src={whatsappIcon} alt="WhatsApp" className="w-6 sm:w-7" />
           </div>
@@ -51,7 +59,7 @@ const Footer = () => {
           </h1>
           <div className="space-y-2 text-sm sm:text-base">
             <p>+8801885447306</p>
-            <p>offical.jomijog@gmail.com</p>
+            <p>jomijog@gmail.com</p>
           </div>
         </div>
       </div>

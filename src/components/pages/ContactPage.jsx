@@ -31,11 +31,11 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <Phone className="w-6 h-6 text-[#7ED957]" />
-              <span className="text-lg text-gray-800">+8801725548150</span>
+              <span className="text-lg text-gray-800">+8801885447306</span>
             </div>
             <div className="flex items-center gap-4">
               <Mail className="w-6 h-6 text-[#7ED957]" />
-              <span className="text-lg text-gray-800">support@jomiJog.com</span>
+              <span className="text-lg text-gray-800">jomijog@gmail.com</span>
             </div>
             <div className="flex items-center gap-4">
               <MapPin className="w-6 h-6 text-[#7ED957]" />

@@ -88,7 +88,7 @@ const Home = () => {
 
       {/*  Divisions Section  */}
       <section className="px-4 sm:px-8 mt-10 mb-16">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#151515] mb-6">
+        <h2 className="text-lg sm:text-xl md:text-2xl text-center font-bold text-[#151515] mb-8">
           বিভাগসমূহ
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
