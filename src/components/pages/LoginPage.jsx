@@ -1,4 +1,6 @@
 import { useState } from "react";
+import  { Link} from 'react-router-dom'
+import Navbar from "../Navbar/Navbar";
 
 const LoginPage = () => {
   const [role, setRole] = useState("user"); // toggle between User and Surveyor
@@ -6,6 +8,7 @@ const LoginPage = () => {
   return (
     <main className="min-h-screen bg-[#F5F3ED] flex flex-col justify-between">
       {/* Main Content */}
+      <Navbar />
       <div className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
         <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-6 sm:p-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957] text-center mb-6">
@@ -76,6 +79,15 @@ const LoginPage = () => {
                 ? "লগইন করুন (ব্যবহারকারী হিসেবে)"
                 : "লগইন করুন (সার্ভেয়ার হিসেবে)"}
             </button>
+            
+            <Link to="/signup">
+            <button
+              type="submit"
+              className="w-full bg-[#7ED957] hover:bg-[#7ED957]/90 transition-colors text-white py-3 rounded-md font-semibold 
+              text-base sm:text-lg"
+            >সাইন আপ করুন</button>
+
+            </Link>
           </form>
         </div>
       </div>

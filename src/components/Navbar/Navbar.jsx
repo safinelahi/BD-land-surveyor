@@ -13,11 +13,13 @@ function Navbar() {
       <header className="flex items-center justify-between px-4 sm:px-[8%] py-4 border-b border-gray-200">
         {/* Logo */}
         <div className="flex-shrink-0">
+          <Link to={"/"}>
           <img
             src={logoImage}
             alt="Logo"
             className="w-24 sm:w-32 md:w-40 lg:w-44 h-auto object-contain"
           />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -38,9 +40,11 @@ function Navbar() {
               className="bg-transparent focus:outline-none text-gray-700 w-full text-base"
             />
           </div>
-          <button className="text-white font-semibold text-base bg-[#7ED957] px-6 py-3 rounded-lg hover:opacity-90 transition">
-            লগইন
-          </button>
+          <Link to={"/login"}>
+            <button className="text-white font-semibold text-base bg-[#7ED957] px-6 py-3 rounded-lg hover:opacity-90 transition">
+              লগইন
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

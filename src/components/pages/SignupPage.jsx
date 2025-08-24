@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbar from "../Navbar/Navbar";
 
 const SignUpPage = () => {
   const [role, setRole] = useState("user"); // toggle
@@ -6,6 +7,7 @@ const SignUpPage = () => {
   return (
     <main className="min-h-screen bg-[#F5F3ED] flex flex-col justify-between">
       {/* Main */}
+      <Navbar />
       <div className="flex-grow flex items-center justify-center px-4 py-12">
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold text-[#7ED957] text-center mb-6">
