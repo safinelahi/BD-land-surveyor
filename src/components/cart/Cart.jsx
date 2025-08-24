@@ -23,10 +23,10 @@ const Cart = () => {
     },
     {
       id: 2,
-      name: " আমিনুল ইসলাি লাফু ",
+      name: " আমিনুল ইসলাম লাফু ",
       age: 40,
       experience: "২৫ বছর",
-      price: "৪০০০",
+      price: "৮০০০",
       img: Surveyor_02,
     },
     {
