@@ -23,10 +23,10 @@ const Cart = () => {
     },
     {
       id: 2,
-      name: " ইজাজ আহমেদ ",
-      age: 30,
-      experience: "৫ বছর",
-      price: "৫০০০",
+      name: " আমিনুল ইসলাি লাফু ",
+      age: 40,
+      experience: "২৫ বছর",
+      price: "৪০০০",
       img: Surveyor_02,
     },
     {

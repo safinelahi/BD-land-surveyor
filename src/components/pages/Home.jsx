@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import logoImage from "../../assets/icons/জমি জগ 1.jpg";
-import heroImage from "../../assets/images/hero page.jpg";
+// import heroImage from "../../assets/images/hero page.jpg";
+import heroImage2 from "../../assets/images/hero-02.png";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,7 +80,7 @@ const Home = () => {
       {/*  Hero Section  */}
       <section className="mt-6 px-4 sm:px-8">
         <img
-          src={heroImage}
+          src={heroImage2}
           alt="Hero"
           className="w-full h-auto rounded-2xl shadow-lg object-cover"
         />
