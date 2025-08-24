@@ -1,7 +1,6 @@
 const LandDocumentGuide = () => {
   return (
     <div className="w-full bg-gray-50">
-      <div className="w-full bg-white shadow-md py-8 px-4 sm:px-8"></div>
 
       {/* Content Section */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
