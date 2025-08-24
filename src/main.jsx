@@ -11,6 +11,7 @@ import SignUpPage from "./components/pages/SignupPage.jsx";
 import TermsAndConditions from "./components/pages/TermsAndConditions.jsx";
 
 
+import GeneralKnowledge from "./components/pages/GeneralKnowledge.jsx";
 import SurveyorsDetails from "./components/pages/SurveyorsDetails.jsx";
 import "./index.css";
 
@@ -26,5 +27,7 @@ createRoot(document.getElementById("root")).render(
     <TermsAndConditions></TermsAndConditions>
     <LoginPage></LoginPage>
     <SignUpPage></SignUpPage>
+    <GeneralKnowledge></GeneralKnowledge>
+    
   </StrictMode>
 );
