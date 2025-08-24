@@ -2,6 +2,7 @@ import { useState } from "react";
 import LandBuyingMistakes from "../GeneralKnowledgePages/LandBuyingMistakes";
 import LandDocumentGuide from "../GeneralKnowledgePages/LandDocumentGuide";
 import LandSurveyGuide from "../GeneralKnowledgePages/LandSurveyGuide";
+import Navbar from "../Navbar/Navbar";
 
 
 const GeneralKnowledge = () => {
@@ -15,6 +16,10 @@ const GeneralKnowledge = () => {
 
   return (
     <div className="px-4 sm:px-8 mt-10 mb-16">
+      <nav className="mb-12">
+        <Navbar/>
+      </nav>
+      
       {/* Title */}
       <h2 className="text-lg sm:text-2xl md:text-3xl text-center font-bold text-[#7ED957] mb-12">
         সাধারণ জ্ঞান

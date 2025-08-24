@@ -13,19 +13,14 @@ import TermsAndConditions from "./components/pages/TermsAndConditions.jsx";
 import GeneralKnowledge from "./components/pages/GeneralKnowledge.jsx";
 import SurveyorsDetails from "./components/pages/SurveyorsDetails.jsx";
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-    <Home></Home>
-    <Cart></Cart>
-    <Footer></Footer>
-    <SurveyorsDetails></SurveyorsDetails>
-    <About></About>
-    <ContactPage></ContactPage>
-    <TermsAndConditions></TermsAndConditions>
-    <LoginPage></LoginPage>
-    <SignUpPage></SignUpPage>
-    <GeneralKnowledge></GeneralKnowledge>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );

@@ -3,10 +3,12 @@ import land02 from "../../assets/images/land-02.jpg";
 import land03 from "../../assets/images/land-03.jpg";
 import land04 from "../../assets/images/land-04.jpg";
 import land05 from "../../assets/images/land-05.jpg";
+import Navbar from "../Navbar/Navbar";
 
 const About = () => {
   return (
     <div className="bg-white text-gray-800">
+      <Navbar />
       {/* Hero Section */}
       <div
         className="relative h-[40vh] flex items-center justify-center bg-cover bg-center"
