@@ -1,33 +1,40 @@
-import React from 'react'
 import { useState } from "react";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logoImage from "../../assets/icons/logo_2.png";
 
 function Navbar() {
-      const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div>
-        {/*  Navbar  */}
-      <header className="flex items-center justify-between px-4 sm:px-[8%] py-4 border-b border-gray-200">
+      {/*  Navbar  */}
+      <header className="flex items-center justify-between px-4 sm:px-[8%] py-4 ">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link to={"/"}>
-          <img
-            src={logoImage}
-            alt="Logo"
-            className="w-24 sm:w-32 md:w-40 lg:w-44 h-auto object-contain"
-          />
+            <img
+              src={logoImage}
+              alt="Logo"
+              className="w-24 sm:w-32 md:w-40 lg:w-44 h-auto object-contain"
+            />
           </Link>
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 text-[#151515] text-sm sm:text-base md:text-lg font-medium">
-          <Link to={'/'} className="hover:text-[#7ED957] transition">হোম</Link>
-          <Link to={"/surveyor"}  className="hover:text-[#7ED957] transition">সার্ভেয়ার</Link>
-          <Link to={'/about'} className="hover:text-[#7ED957] transition">আমাদের সম্পর্কে</Link>
-          <Link to={"/knowledge"} className="hover:text-[#7ED957] transition">সাধারণ জ্ঞান</Link>
+          <Link to={"/"} className="hover:text-[#7ED957] transition">
+            হোম
+          </Link>
+          <Link to={"/surveyor"} className="hover:text-[#7ED957] transition">
+            সার্ভেয়ার
+          </Link>
+          <Link to={"/about"} className="hover:text-[#7ED957] transition">
+            আমাদের সম্পর্কে
+          </Link>
+          <Link to={"/knowledge"} className="hover:text-[#7ED957] transition">
+            সাধারণ জ্ঞান
+          </Link>
         </nav>
 
         {/* Search + Login (desktop) */}
@@ -60,10 +67,18 @@ function Navbar() {
       {menuOpen && (
         <div className="md:hidden px-4 py-4 bg-white border-b border-gray-200 space-y-4">
           <nav className="flex flex-col gap-3 text-[#151515] text-base font-medium">
-            <a href="#" className="hover:text-[#7ED957] transition">হোম</a>
-            <a href="#" className="hover:text-[#7ED957] transition">সার্ভেয়ার</a>
-            <a href="#" className="hover:text-[#7ED957] transition">আমাদের সম্পর্কে</a>
-            <a href="#" className="hover:text-[#7ED957] transition">জ্ঞাতব্য</a>
+            <a href="#" className="hover:text-[#7ED957] transition">
+              হোম
+            </a>
+            <a href="#" className="hover:text-[#7ED957] transition">
+              সার্ভেয়ার
+            </a>
+            <a href="#" className="hover:text-[#7ED957] transition">
+              আমাদের সম্পর্কে
+            </a>
+            <a href="#" className="hover:text-[#7ED957] transition">
+              জ্ঞাতব্য
+            </a>
           </nav>
           <div className="flex flex-col gap-3">
             <div className="flex items-center w-full bg-[#f5f5eb] rounded-lg px-3 py-2 border border-gray-200">
@@ -81,7 +96,7 @@ function Navbar() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

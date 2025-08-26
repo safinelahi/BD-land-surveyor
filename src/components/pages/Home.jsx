@@ -14,7 +14,7 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative mt-6 px-4 sm:px-8">
+      <div className="relative  px-4 sm:px-8">
         {/* Background Image */}
         <div className="relative w-full h-[40vh] sm:h-[55vh] lg:h-[70vh] rounded-2xl overflow-hidden shadow-lg">
           <img
