@@ -28,11 +28,6 @@ const Home = () => {
 
           {/* Text Content */}
           <div className="relative z-10 flex flex-col items-start justify-center h-full px-6 sm:px-12 md:px-20 text-white">
-            {/* Logo */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#7ED957] mb-4">
-              জমিযোগ
-            </h1>
-
             {/* Heading */}
             <h2 className="text-xl sm:text-2xl md:text-5xl font-bold leading-snug mb-4">
               যখনই প্রয়োজন, <br /> খুঁজুন বিশ্বস্ত সার্ভেয়ার
