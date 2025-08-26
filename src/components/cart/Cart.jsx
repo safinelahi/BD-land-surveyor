@@ -173,6 +173,10 @@ const Cart = () => {
           ))}
         </div>
       </div>
+      {/* see more  */}
+      <div>
+        
+      </div>
     </div>
   );
 };

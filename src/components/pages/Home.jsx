@@ -34,7 +34,7 @@ const Home = () => {
             </h2>
 
             {/* Subtext */}
-            <p className="text-sm sm:text-base md:text-lg mb-6 max-w-xl">
+            <p className="text-sm sm:text-base md:text-lg mb-6 max-w-[480px] ">
               বুকিং থেকে সার্ভে পর্যন্ত, জমিযোগ আনছে জমি সেবা অনলাইনে— নিরাপদ,
               দ্রুত ও বিশ্বস্ত।
             </p>
