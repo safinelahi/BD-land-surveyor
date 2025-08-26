@@ -174,8 +174,10 @@ const Cart = () => {
         </div>
       </div>
       {/* see more  */}
-      <div>
-        
+      <div className="flex justify-center pb-16">
+        <button className="px-8 py-3 sm:px-10 sm:py-4 bg-[#7ED957] text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300">
+          আরও দেখুন
+        </button>
       </div>
     </div>
   );
