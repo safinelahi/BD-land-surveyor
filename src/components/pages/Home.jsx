@@ -1,6 +1,6 @@
 //import { useState } from "react";
-
-import heroImage2 from "../../assets/images/hero-02.png";
+import heroImage1 from "../../assets/images/hero page.jpg";
+//import heroImage2 from "../../assets/images/hero-02.png";
 import Cart from "../cart/Cart";
 
 import Navbar from ".././Navbar/Navbar";
@@ -18,13 +18,13 @@ const Home = () => {
         {/* Background Image */}
         <div className="relative w-full h-[40vh] sm:h-[55vh] lg:h-[70vh] rounded-2xl overflow-hidden shadow-lg">
           <img
-            src={heroImage2}
+            src={heroImage1}
             alt="Hero"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />
 
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-[#131e3d]/70"></div>
 
           {/* Text Content */}
           <div className="relative z-10 flex flex-col items-start justify-center h-full px-6 sm:px-12 md:px-20 text-white">
