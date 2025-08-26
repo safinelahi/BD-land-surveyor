@@ -2,6 +2,7 @@
 import heroImage1 from "../../assets/images/hero page.jpg";
 //import heroImage2 from "../../assets/images/hero-02.png";
 import Cart from "../cart/Cart";
+import UserFeedback from "../UserFeedback/UserFeedback";
 
 import Navbar from ".././Navbar/Navbar";
 
@@ -73,6 +74,7 @@ const Home = () => {
         </div>
       </section>
       <Cart />
+      <UserFeedback />
     </div>
   );
 };
