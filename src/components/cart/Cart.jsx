@@ -47,7 +47,7 @@ const Cart = () => {
     },
     {
       id: 5,
-      name: "কবির আহমিদ অপু",
+      name: "কবির আহম্মেদ অপু",
       age: 32,
       experience: "৮ বছর",
       price: "৭০০০",
@@ -81,9 +81,9 @@ const Cart = () => {
 
   // Reusable card
   const SurveyorCard = ({ name, img, experience, price }) => (
-    <div className="bg-white rounded-2xl border border-[#7ed95659] overflow-hidden shadow-sm hover:shadow-md transition">
+    <div className="bg-white rounded-2xl border border-[#7ed95659] overflow-hidden ">
       {/* Image */}
-      <div className="relative w-full h-64 flex items-center justify-center bg-white rounded-t-2xl overflow-hidden">
+      <div className="relative w-full h-64 pt-5 flex items-center justify-center bg-white rounded-t-2xl overflow-hidden">
         <img
           src={img}
           alt={name}
