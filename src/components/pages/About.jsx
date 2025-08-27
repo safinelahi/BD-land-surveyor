@@ -157,20 +157,15 @@ const About = () => {
 
       {/* Call to Action */}
       <div
-        className="relative text-center py-8 md:py-20"
-        style={{
-          backgroundImage: `url(${land05})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="relative  bg-cover bg-center py-8 md:py-20 text-center object-center object-cover"
+        style={{ backgroundImage: `url(${land05})` }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 text-white px-6 sm:px-[8%]">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-8 ">
             জমি সংক্রান্ত সেবা দরকার?
           </h2>
-          <p className="mb-3 md:mb-10 text-base sm:text-sm">
+          <p className=" mb-3 md:mb-10 text-base md:text-xl">
             আজই আমাদের সাথে যোগাযোগ করুন এবং বিশ্বস্ত সার্ভেয়ারের সহায়তা নিন।
           </p>
           <a
