@@ -12,7 +12,7 @@ const About = () => {
       {/* Hero Section */}
       <div className="relative px-4 sm:px-8">
         <div
-          className="relative w-full h-[40vh] sm:h-[40vh] lg:h-[40vh] rounded-2xl overflow-hidden shadow-lg flex items-center justify-center bg-cover bg-center"
+          className="relative w-full h-[30vh] sm:h-[40vh] lg:h-[40vh] rounded-2xl overflow-hidden shadow-lg flex items-center justify-center bg-cover bg-center"
           style={{ backgroundImage: `url(${land01})` }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
@@ -25,18 +25,18 @@ const About = () => {
       {/* Company Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 sm:px-[8%] mt-10 items-center">
         {/* Left side */}
-        <div className="space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957]">
+        <div className="space-y-6 text-center md:text-start ">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957]  ">
             কোম্পানি ওভারভিউ
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed">
+          <p className="text-base sm:text-lg leading-relaxed ">
             <span className="text-[#7ED957] font-semibold">জমিযোগ</span> হলো
             একটি বিশ্বস্ত অনলাইন প্ল্যাটফর্ম যেখানে আপনি সহজে{" "}
             <span className="text-[#7ED957]">যোগ্য ও অনুমোদিত সার্ভেয়ার</span>{" "}
             বুক করতে পারবেন। জমি সংক্রান্ত সমস্যাগুলো সমাধান করা এবং স্বচ্ছ সেবা
             প্রদান করাই আমাদের মূল লক্ষ্য।
           </p>
-          <p className="text-base sm:text-lg leading-relaxed">
+          <p className="text-base sm:text-lg leading-relaxed  ">
             আমরা বিশ্বাস করি, প্রতিটি গ্রাহককে সঠিক সময়ে, সঠিক দামে এবং সঠিক
             সেবার মাধ্যমে সাহায্য করা আমাদের দায়িত্ব। তাই{" "}
             <span className="text-[#7ED957] font-semibold">
@@ -51,21 +51,21 @@ const About = () => {
           <img
             src={land02}
             alt="Land Survey"
-            className="w-full sm:w-[270px] h-[400px] rounded-2xl shadow-lg object-cover"
+            className="w-full sm:w-[270px] h-[170px] md:h-[400px] rounded-2xl shadow-lg object-cover"
           />
           <img
             src={land03}
             alt="Land surveying"
-            className="w-full sm:w-[304px] h-[300px] mt-4 sm:mt-[17%] rounded-2xl shadow-lg object-cover"
+            className="hidden sm:block w-full sm:w-[304px] h-[300px] mt-4 sm:mt-[17%] rounded-2xl shadow-lg object-cover"
           />
         </div>
       </div>
 
       {/* Who We Are */}
-      
+
       <div className="flex flex-col md:flex-row-reverse px-6 sm:px-[8%] gap-10 mt-10 bg-gray-50 py-8 items-center">
         {/* Left side */}
-        <div className="space-y-6">
+        <div className="space-y-6 text-center md:text-start ">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957]">
             আমরা কারা
           </h2>
@@ -102,18 +102,18 @@ const About = () => {
         </div>
 
         {/* Right side */}
-        <div className=" ">
+        <div className=" w-full md:w-[80%] ">
           <img
             src={land04}
             alt="Surveyor at work"
-            className="w-full h-auto md:h-[400px] rounded-2xl shadow-lg object-cover "
+            className="w-full h-[170px] md:h-[400px] rounded-2xl shadow-lg object-cover "
           />
         </div>
       </div>
 
       {/* Why Trust Us */}
       <div className="px-6 sm:px-[8%] py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div className="space-y-6">
+        <div className="space-y-6 text-center md:text-start ">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957]">
             কেন আমাদের বেছে নেবেন?
           </h2>
@@ -143,14 +143,15 @@ const About = () => {
             </h3>
             <p>
               অভিজ্ঞ সার্ভেয়ার ও পেশাদার টিম প্রতিটি ধাপে আপনাকে সহায়তা করে,
-              যেন <br/>আপনার জমি সংক্রান্ত সমস্যার সমাধান সহজ হয়।
+              যেন <br />
+              আপনার জমি সংক্রান্ত সমস্যার সমাধান সহজ হয়।
             </p>
           </div>
         </div>
         <img
           src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=600&q=80"
           alt="Service"
-          className="rounded-2xl shadow-lg w-full h-auto object-cover"
+          className="rounded-2xl shadow-lg w-full h-[170px] md:h-auto object-cover"
         />
       </div>
 
