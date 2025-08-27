@@ -62,6 +62,7 @@ const About = () => {
       </div>
 
       {/* Who We Are */}
+      
       <div className="flex flex-col md:flex-row-reverse px-6 sm:px-[8%] gap-10 mt-10 bg-gray-50 py-8 items-center">
         {/* Left side */}
         <div className="space-y-6">
@@ -101,11 +102,11 @@ const About = () => {
         </div>
 
         {/* Right side */}
-        <div className="w-full md:w-[80%]  ">
+        <div className=" ">
           <img
             src={land04}
             alt="Surveyor at work"
-            className="w-full h-[400px] rounded-2xl shadow-lg object-cover object-center"
+            className="w-full h-auto md:h-[400px] rounded-2xl shadow-lg object-cover "
           />
         </div>
       </div>
