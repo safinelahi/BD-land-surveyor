@@ -10,14 +10,16 @@ const About = () => {
     <div className="bg-white text-gray-800">
       <Navbar />
       {/* Hero Section */}
-      <div
-        className="relative h-[40vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${land01})` }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl font-bold text-[#7ED957]">
-          আমাদের সম্পর্কে
-        </h1>
+      <div className="relative px-4 sm:px-8">
+        <div
+          className="relative w-full h-[40vh] sm:h-[40vh] lg:h-[40vh] rounded-2xl overflow-hidden shadow-lg flex items-center justify-center bg-cover bg-center"
+          style={{ backgroundImage: `url(${land01})` }}
+        >
+          <div className="absolute inset-0 bg-black/50"></div>
+          <h1 className="relative z-10 text-3xl sm:text-5xl md:text-6xl font-bold text-[#7ED957]">
+            আমাদের সম্পর্কে
+          </h1>
+        </div>
       </div>
 
       {/* Company Overview */}
@@ -28,8 +30,8 @@ const About = () => {
             কোম্পানি ওভারভিউ
           </h2>
           <p className="text-base sm:text-lg leading-relaxed">
-            <span className="text-[#7ED957] font-semibold">জমিযোগ</span>{" "}
-            হলো একটি বিশ্বস্ত অনলাইন প্ল্যাটফর্ম যেখানে আপনি সহজে{" "}
+            <span className="text-[#7ED957] font-semibold">জমিযোগ</span> হলো
+            একটি বিশ্বস্ত অনলাইন প্ল্যাটফর্ম যেখানে আপনি সহজে{" "}
             <span className="text-[#7ED957]">যোগ্য ও অনুমোদিত সার্ভেয়ার</span>{" "}
             বুক করতে পারবেন। জমি সংক্রান্ত সমস্যাগুলো সমাধান করা এবং স্বচ্ছ সেবা
             প্রদান করাই আমাদের মূল লক্ষ্য।
@@ -60,7 +62,7 @@ const About = () => {
       </div>
 
       {/* Who We Are */}
-      <div className="flex flex-col md:flex-row px-6 sm:px-[8%] gap-10 mt-10 bg-gray-50 py-8 items-center">
+      <div className="flex flex-col md:flex-row-reverse px-6 sm:px-[8%] gap-10 mt-10 bg-gray-50 py-8 items-center">
         {/* Left side */}
         <div className="space-y-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957]">
@@ -99,22 +101,17 @@ const About = () => {
         </div>
 
         {/* Right side */}
-        <div className="w-full md:w-[50%]">
+        <div className="w-full md:w-[80%]  ">
           <img
             src={land04}
             alt="Surveyor at work"
-            className="w-full h-auto rounded-2xl shadow-lg object-cover"
+            className="w-full h-[400px] rounded-2xl shadow-lg object-cover object-center"
           />
         </div>
       </div>
 
       {/* Why Trust Us */}
-      <section className="px-6 sm:px-[8%] py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <img
-          src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=600&q=80"
-          alt="Service"
-          className="rounded-2xl shadow-lg w-full h-auto object-cover"
-        />
+      <div className="px-6 sm:px-[8%] py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957]">
             কেন আমাদের বেছে নেবেন?
@@ -124,24 +121,37 @@ const About = () => {
             <h3 className="text-lg sm:text-xl font-semibold text-[#7ED957]">
               সাশ্রয়ী ও মানসম্মত সেবা
             </h3>
-            <p>আমরা প্রতিটি সেবা সঠিক দামে প্রদান করি যাতে আপনি সর্বোচ্চ মান পান।</p>
+            <p>
+              আমরা প্রতিটি সেবা সঠিক দামে প্রদান করি যাতে আপনি সর্বোচ্চ মান পান।
+            </p>
           </div>
 
           <div>
             <h3 className="text-lg sm:text-xl font-semibold text-[#7ED957]">
               নির্ভরযোগ্যতা ও স্বচ্ছতা
             </h3>
-            <p>আমাদের প্রতিটি কাজ সম্পূর্ণ স্বচ্ছ ও নির্ভরযোগ্য। গ্রাহক যা দেখেন, তাই পান।</p>
+            <p>
+              আমাদের প্রতিটি কাজ সম্পূর্ণ স্বচ্ছ ও নির্ভরযোগ্য। গ্রাহক যা দেখেন,
+              তাই পান।
+            </p>
           </div>
 
           <div>
             <h3 className="text-lg sm:text-xl font-semibold text-[#7ED957]">
               অভিজ্ঞ ও পেশাদার টিম
             </h3>
-            <p>অভিজ্ঞ সার্ভেয়ার ও পেশাদার টিম প্রতিটি ধাপে আপনাকে সহায়তা করে, যেন আপনার জমি সংক্রান্ত সমস্যার সমাধান সহজ হয়।</p>
+            <p>
+              অভিজ্ঞ সার্ভেয়ার ও পেশাদার টিম প্রতিটি ধাপে আপনাকে সহায়তা করে,
+              যেন <br/>আপনার জমি সংক্রান্ত সমস্যার সমাধান সহজ হয়।
+            </p>
           </div>
         </div>
-      </section>
+        <img
+          src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=600&q=80"
+          alt="Service"
+          className="rounded-2xl shadow-lg w-full h-auto object-cover"
+        />
+      </div>
 
       {/* Call to Action */}
       <div
@@ -150,10 +160,10 @@ const About = () => {
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 text-white px-6 sm:px-[8%]">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4">
             জমি সংক্রান্ত সেবা দরকার?
           </h2>
-          <p className="mb-10 text-base sm:text-lg">
+          <p className="mb-10 text-base sm:text-sm">
             আজই আমাদের সাথে যোগাযোগ করুন এবং বিশ্বস্ত সার্ভেয়ারের সহায়তা নিন।
           </p>
           <a
