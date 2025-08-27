@@ -51,7 +51,7 @@ const About = () => {
           <img
             src={land02}
             alt="Land Survey"
-            className="w-full sm:w-[270px] h-[170px] md:h-[400px] rounded-2xl shadow-lg object-cover"
+            className="w-full sm:w-[270px] h-[170px] md:h-[410px] rounded-2xl shadow-lg object-cover"
           />
           <img
             src={land03}
@@ -102,7 +102,7 @@ const About = () => {
         </div>
 
         {/* Right side */}
-        <div className=" w-full md:w-[80%] ">
+        <div className=" w-full sm:w-[80%] md:w-[80%] ">
           <img
             src={land04}
             alt="Surveyor at work"
@@ -151,21 +151,26 @@ const About = () => {
         <img
           src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=600&q=80"
           alt="Service"
-          className="rounded-2xl shadow-lg w-full h-[170px] md:h-auto object-cover"
+          className="rounded-2xl shadow-lg w-full h-[170px] md:h-auto  object-cover"
         />
       </div>
 
       {/* Call to Action */}
       <div
-        className="relative bg-no-repeat bg-cover bg-center py-8 md:py-20 text-center"
-        style={{ backgroundImage: `url(${land05})` }}
+        className="relative text-center py-8 md:py-20"
+        style={{
+          backgroundImage: `url(${land05})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 text-white px-6 sm:px-[8%]">
           <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4">
             জমি সংক্রান্ত সেবা দরকার?
           </h2>
-          <p className=" mb-3 md:mb-10 text-base sm:text-sm">
+          <p className="mb-3 md:mb-10 text-base sm:text-sm">
             আজই আমাদের সাথে যোগাযোগ করুন এবং বিশ্বস্ত সার্ভেয়ারের সহায়তা নিন।
           </p>
           <a
