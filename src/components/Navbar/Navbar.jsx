@@ -66,20 +66,23 @@ function Navbar() {
       {/*  Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-4 py-4 bg-white border-b border-gray-200 space-y-4">
+          {/* Mobile Nav */}
           <nav className="flex flex-col gap-3 text-[#151515] text-base font-medium">
-            <a href="#" className="hover:text-[#7ED957] transition">
+            <Link to={"/"} className="hover:text-[#7ED957] transition">
               হোম
-            </a>
-            <a href="#" className="hover:text-[#7ED957] transition">
+            </Link>
+            <Link to={"/surveyor"} className="hover:text-[#7ED957] transition">
               সার্ভেয়ার
-            </a>
-            <a href="#" className="hover:text-[#7ED957] transition">
+            </Link>
+            <Link to={"/about"} className="hover:text-[#7ED957] transition">
               আমাদের সম্পর্কে
-            </a>
-            <a href="#" className="hover:text-[#7ED957] transition">
-              জ্ঞাতব্য
-            </a>
+            </Link>
+            <Link to={"/knowledge"} className="hover:text-[#7ED957] transition">
+              সাধারণ জ্ঞান
+            </Link>
           </nav>
+
+          {/* Search + Login (mobile) */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center w-full bg-[#f5f5eb] rounded-lg px-3 py-2 border border-gray-200">
               <FiSearch className="text-gray-500 mr-2 text-lg" />
@@ -89,9 +92,11 @@ function Navbar() {
                 className="bg-transparent focus:outline-none text-gray-700 w-full text-sm"
               />
             </div>
-            <button className="text-white font-semibold text-sm bg-[#7ED957] px-4 py-2 rounded-lg hover:opacity-90 transition shadow-md">
-              লগইন
-            </button>
+            <Link to={"/login"}>
+              <button className="text-white font-semibold text-sm bg-[#7ED957] px-4 py-2 rounded-lg hover:opacity-90 transition shadow-md">
+                লগইন
+              </button>
+            </Link>
           </div>
         </div>
       )}
