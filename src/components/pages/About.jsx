@@ -112,7 +112,7 @@ const About = () => {
       </div>
 
       {/* Why Trust Us */}
-      <div className="px-6 sm:px-[8%] py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="px-6 sm:px-[8%] py-8 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6 text-center md:text-start ">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#7ED957]">
             কেন আমাদের বেছে নেবেন?
@@ -157,7 +157,7 @@ const About = () => {
 
       {/* Call to Action */}
       <div
-        className="relative bg-cover bg-center py-20 text-center"
+        className="relative bg-no-repeat bg-cover bg-center py-8 md:py-20 text-center"
         style={{ backgroundImage: `url(${land05})` }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
@@ -165,7 +165,7 @@ const About = () => {
           <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4">
             জমি সংক্রান্ত সেবা দরকার?
           </h2>
-          <p className="mb-10 text-base sm:text-sm">
+          <p className=" mb-3 md:mb-10 text-base sm:text-sm">
             আজই আমাদের সাথে যোগাযোগ করুন এবং বিশ্বস্ত সার্ভেয়ারের সহায়তা নিন।
           </p>
           <a
