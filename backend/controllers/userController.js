@@ -16,6 +16,7 @@ const registerUser = asyncHandler(async (req, res) => {
     companyAddress,
     licenseNumber,
     experience,
+    price
   } = req.body;
 
   const normalizedEmail = email.toLowerCase();
@@ -38,7 +39,7 @@ const registerUser = asyncHandler(async (req, res) => {
     password,
     mobile,
     ...(role === "user" && { address }),
-    ...(role === "surveyor" && { companyName, companyAddress, licenseNumber, experience }),
+    ...(role === "surveyor" && { companyName, companyAddress, licenseNumber, experience, price }),
     ...(profileImageBuffer && { profileImage: profileImageBuffer }),
   });
 
@@ -58,8 +59,9 @@ const registerUser = asyncHandler(async (req, res) => {
 // @access  Public
 const getSurveyors = asyncHandler(async (req, res) => {
   const surveyors = await User.find({ role: "surveyor" }).select(
-    "name experience profileImage"
+    "name experience profileImage price"
   );
+  console.log(surveyors)
 
   const surveyorsWithImage = surveyors.map((s) => ({
     ...s._doc,

@@ -17,6 +17,7 @@ const SignUpPage = () => {
     companyAddress: "",
     licenseNumber: "",
     experience: "",
+    price:""
   });
   const [profileImage, setProfileImage] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -74,6 +75,7 @@ const SignUpPage = () => {
         companyAddress: "",
         licenseNumber: "",
         experience: "",
+        price:""
       });
       
       setProfileImage(null);
@@ -298,6 +300,21 @@ const SignUpPage = () => {
                     required
                   />
                 </div>
+               <div className="mb-4">
+                  <label className="block text-sm font-medium text-[#7ED957] mb-1">
+                    সেবা মূল্য
+                  </label>
+                  <input
+                    type="number"
+                    name="price"
+                    value={formData.price || ""}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
+                    placeholder="আপনার সার্ভেয়ার সেবা মূল্য লিখুন"
+                    required
+                  />
+                </div>
+
               </>
             )}
 

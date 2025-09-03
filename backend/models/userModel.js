@@ -46,7 +46,9 @@ const userSchema = new mongoose.Schema(
     experience: {
       type: Number,
     },
-    // Profile image stored as Buffer
+    price: {
+      type: Number,
+    },
     profileImage: {
       type: Buffer,
     },

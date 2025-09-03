@@ -57,7 +57,7 @@ const Cart = () => {
           {/* Price */}
           <div className="flex items-center">
             <img src={priceIcon} alt="" className="w-4 h-4" />
-            <span className="ml-1">{price}/-</span>
+            <span className="ml-1">{price}</span>
           </div>
         </div>
 
@@ -89,7 +89,7 @@ const Cart = () => {
               name={surveyor.name}
               img={surveyor.profileImage}
               experience={surveyor.experience + " বছর"}
-              price={surveyor.price || "নির্ধারিত নেই"}
+              price={surveyor.price? `${surveyor.price} টাকা`: "নির্ধারিত নেই"}
             />
           ))}
         </div>
