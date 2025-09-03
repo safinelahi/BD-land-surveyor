@@ -1,13 +1,55 @@
 import { useState } from "react";
+import axios from "axios";
 import Navbar from "../Navbar/Navbar";
 
 const SignUpPage = () => {
-  const [role, setRole] = useState("user"); // toggle
+  const [role, setRole] = useState("user"); // default role
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    mobile: "",
+    address: "",
+    companyName: "",
+    companyAddress: "",
+    licenseNumber: "",
+    experience: "",
+  });
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      const { data } = await axios.post("http://localhost:5000/api/users", {
+        role,
+        ...formData,
+      });
+      console.log("✅ Registered:", data);
+      alert("Registration successful!");
+    } catch (error) {
+      console.error(error.response?.data?.message || error.message);
+      alert("Registration failed");
+    }
+  };
 
   return (
     <main className="min-h-screen bg-[#F5F3ED] flex flex-col justify-between">
-      {/* Main */}
+      {/* Navbar */}
       <Navbar />
+
+      {/* Main Content */}
       <div className="flex-grow flex items-center justify-center px-4 py-12">
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold text-[#7ED957] text-center mb-6">
@@ -18,9 +60,9 @@ const SignUpPage = () => {
           <div className="flex justify-center mb-8 space-x-4">
             <button
               type="button"
-              onClick={() => setRole("student")}
+              onClick={() => setRole("user")}
               className={`px-6 py-2 rounded-md font-semibold transition-colors ${
-                role === "student"
+                role === "user"
                   ? "bg-[#7ED957] text-white shadow-md"
                   : "bg-[#7ED957]/10 text-[#7ED957] hover:bg-[#7ED957]/15"
               }`}
@@ -29,9 +71,9 @@ const SignUpPage = () => {
             </button>
             <button
               type="button"
-              onClick={() => setRole("recruiter")}
+              onClick={() => setRole("surveyor")}
               className={`px-6 py-2 rounded-md font-semibold transition-colors ${
-                role === "recruiter"
+                role === "surveyor"
                   ? "bg-[#7ED957] text-white shadow-md"
                   : "bg-[#7ED957]/10 text-[#7ED957] hover:bg-[#7ED957]/15"
               }`}
@@ -41,7 +83,7 @@ const SignUpPage = () => {
           </div>
 
           {/* SignUp Form */}
-          <form>
+          <form onSubmit={handleSubmit}>
             {/* Full Name */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-[#7ED957] mb-1">
@@ -49,6 +91,9 @@ const SignUpPage = () => {
               </label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                 placeholder="আপনার নাম লিখুন"
                 required
@@ -62,6 +107,9 @@ const SignUpPage = () => {
               </label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                 placeholder="আপনার ইমেইল লিখুন"
                 required
@@ -75,6 +123,9 @@ const SignUpPage = () => {
               </label>
               <input
                 type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                 placeholder="কমপক্ষে ৬ অক্ষরের পাসওয়ার্ড দিন"
                 required
@@ -88,6 +139,9 @@ const SignUpPage = () => {
               </label>
               <input
                 type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                 placeholder="আবার পাসওয়ার্ড লিখুন"
                 required
@@ -101,6 +155,9 @@ const SignUpPage = () => {
               </label>
               <input
                 type="text"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                 placeholder="আপনার মোবাইল নম্বর লিখুন"
                 required
@@ -108,13 +165,16 @@ const SignUpPage = () => {
             </div>
 
             {/* Conditional fields */}
-            {role === "student" && (
+            {role === "user" && (
               <div className="mb-6">
                 <label className="block text-sm font-medium text-[#7ED957] mb-1">
                   ঠিকানা
                 </label>
                 <input
                   type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                   placeholder="আপনার ঠিকানা লিখুন"
                   required
@@ -122,7 +182,7 @@ const SignUpPage = () => {
               </div>
             )}
 
-            {role === "recruiter" && (
+            {role === "surveyor" && (
               <>
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-[#7ED957] mb-1">
@@ -130,6 +190,9 @@ const SignUpPage = () => {
                   </label>
                   <input
                     type="text"
+                    name="companyName"
+                    value={formData.companyName}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                     placeholder="কোম্পানির নাম লিখুন"
                     required
@@ -141,6 +204,9 @@ const SignUpPage = () => {
                   </label>
                   <input
                     type="text"
+                    name="companyAddress"
+                    value={formData.companyAddress}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                     placeholder="ঠিকানা লিখুন"
                     required
@@ -152,6 +218,9 @@ const SignUpPage = () => {
                   </label>
                   <input
                     type="text"
+                    name="licenseNumber"
+                    value={formData.licenseNumber}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                     placeholder="লাইসেন্স নম্বর লিখুন"
                     required
@@ -163,6 +232,9 @@ const SignUpPage = () => {
                   </label>
                   <input
                     type="number"
+                    name="experience"
+                    value={formData.experience}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#7ED957] border-gray-300"
                     placeholder="কত বছরের অভিজ্ঞতা আছে লিখুন"
                     required
@@ -176,13 +248,14 @@ const SignUpPage = () => {
               type="submit"
               className="w-full bg-[#7ED957] hover:bg-[#7ED957]/90 transition-colors text-white py-3 rounded-md font-semibold"
             >
-              {role === "student"
+              {role === "user"
                 ? "রেজিস্ট্রেশন করুন (ব্যবহারকারী হিসেবে)"
                 : "রেজিস্ট্রেশন করুন (সার্ভেয়ার হিসেবে)"}
             </button>
           </form>
         </div>
       </div>
+
       {/* Footer */}
       <div className="py-6 text-center ">
         <p className="text-gray-600 text-sm">
