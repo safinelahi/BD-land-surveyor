@@ -17,41 +17,40 @@ const registerUser = asyncHandler(async (req, res) => {
     licenseNumber,
     experience,
   } = req.body;
-  console.log(registerUser)
 
-  const userExists = await User.findOne({ email });
+  const normalizedEmail = email.toLowerCase();
+
+  const userExists = await User.findOne({ email: normalizedEmail });
   if (userExists) {
     res.status(400);
     throw new Error("User already exists");
   }
 
+  let profileImageBuffer = null;
+  if (req.file) {
+    profileImageBuffer = req.file.buffer;
+  }
+
   const user = await User.create({
     role,
     name,
-    email,
+    email: normalizedEmail,
     password,
     mobile,
-    ...(role === "student" && { address }),
-    ...(role === "recruiter" && {
-      companyName,
-      companyAddress,
-      licenseNumber,
-      experience,
-    }),
+    ...(role === "user" && { address }),
+    ...(role === "surveyor" && { companyName, companyAddress, licenseNumber, experience }),
+    ...(profileImageBuffer && { profileImage: profileImageBuffer }),
   });
 
-  if (user) {
-    res.status(201).json({
-      _id: user._id,
-      role: user.role,
-      name: user.name,
-      email: user.email,
-      mobile: user.mobile,
-    });
-  } else {
-    res.status(400);
-    throw new Error("Invalid user data");
-  }
+  res.status(201).json({
+    _id: user._id,
+    role: user.role,
+    name: user.name,
+    email: user.email,
+    mobile: user.mobile,
+    message: "Registration successful",
+  });
 });
 
-export { registerUser };
+
+export {registerUser}

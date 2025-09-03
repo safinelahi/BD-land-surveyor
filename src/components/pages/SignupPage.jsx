@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import Navbar from "../Navbar/Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUpPage = () => {
-  const [role, setRole] = useState("user"); // default role
+  const [role, setRole] = useState("user");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,40 +18,77 @@ const SignUpPage = () => {
     licenseNumber: "",
     experience: "",
   });
+  const [profileImage, setProfileImage] = useState(null);
+  const [preview, setPreview] = useState(null);
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle submit
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setProfileImage(file);
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => setPreview(reader.result);
+      reader.readAsDataURL(file);
+    } else {
+      setPreview(null);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
-
+    console.log(formData)
     try {
-      const { data } = await axios.post("http://localhost:5000/api/users", {
-        role,
-        ...formData,
+      const dataToSend = new FormData();
+      dataToSend.append("role", role);
+      Object.keys(formData).forEach((key) => {
+        dataToSend.append(key, formData[key]);
       });
-      console.log("✅ Registered:", data);
-      alert("Registration successful!");
+      if (profileImage) dataToSend.append("profileImage", profileImage);
+
+      const { data } = await axios.post(
+        "http://localhost:5000/api/users",
+        dataToSend,
+      );
+
+      console.log("Registered:", data);
+      toast.success("Registration successful!");
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        mobile: "",
+        address: "",
+        companyName: "",
+        companyAddress: "",
+        licenseNumber: "",
+        experience: "",
+      });
+      
+      setProfileImage(null);
+      setPreview(null);
+
     } catch (error) {
       console.error(error.response?.data?.message || error.message);
-      alert("Registration failed");
+      toast.error(error.response?.data?.message || "Registration failed");
     }
   };
 
   return (
     <main className="min-h-screen bg-[#F5F3ED] flex flex-col justify-between">
-      {/* Navbar */}
       <Navbar />
 
-      {/* Main Content */}
       <div className="flex-grow flex items-center justify-center px-4 py-12">
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold text-[#7ED957] text-center mb-6">
@@ -82,7 +121,6 @@ const SignUpPage = () => {
             </button>
           </div>
 
-          {/* SignUp Form */}
           <form onSubmit={handleSubmit}>
             {/* Full Name */}
             <div className="mb-4">
@@ -164,6 +202,26 @@ const SignUpPage = () => {
               />
             </div>
 
+            {/* Optional profile image */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-[#7ED957] mb-1">
+                প্রোফাইল ছবি (ঐচ্ছিক)
+              </label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="w-full"
+              />
+              {preview && (
+                <img
+                  src={preview}
+                  alt="Profile Preview"
+                  className="mt-2 w-32 h-32 object-cover rounded-full border"
+                />
+              )}
+            </div>
+
             {/* Conditional fields */}
             {role === "user" && (
               <div className="mb-6">
@@ -243,7 +301,6 @@ const SignUpPage = () => {
               </>
             )}
 
-            {/* Submit */}
             <button
               type="submit"
               className="w-full bg-[#7ED957] hover:bg-[#7ED957]/90 transition-colors text-white py-3 rounded-md font-semibold"
@@ -256,13 +313,14 @@ const SignUpPage = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="py-6 text-center ">
         <p className="text-gray-600 text-sm">
-          © ২০২৫ <span className="text-[#7ED957] font-bold">জমিযোগ</span> ।
-          সর্বস্বত্ব সংরক্ষিত
+          © ২০২৫ <span className="text-[#7ED957] font-bold">জমিযোগ</span> । সর্বস্বত্ব সংরক্ষিত
         </p>
       </div>
+
+      {/* Toast container */}
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </main>
   );
 };
