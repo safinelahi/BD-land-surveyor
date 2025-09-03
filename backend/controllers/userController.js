@@ -53,4 +53,20 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 
-export {registerUser}
+// @desc    Get all surveyors
+// @route   GET /api/users/surveyors
+// @access  Public
+const getSurveyors = asyncHandler(async (req, res) => {
+  const surveyors = await User.find({ role: "surveyor" }).select(
+    "name experience profileImage"
+  );
+
+  const surveyorsWithImage = surveyors.map((s) => ({
+    ...s._doc,
+    profileImage: s.profileImage ? s.profileImage.toString("base64") : null,
+  }));
+
+  res.json(surveyorsWithImage);
+});
+
+export {registerUser, getSurveyors}
