@@ -35,6 +35,9 @@ function Navbar() {
           <Link to={"/knowledge"} className="hover:text-[#7ED957] transition">
             সাধারণ জ্ঞান
           </Link>
+          <Link to={"/contact-page"} className="hover:text-[#7ED957] transition">
+            যোগাযোগ করুন
+          </Link>
         </nav>
 
         {/* Search + Login (desktop) */}
@@ -79,6 +82,9 @@ function Navbar() {
             </Link>
             <Link to={"/knowledge"} className="hover:text-[#7ED957] transition">
               সাধারণ জ্ঞান
+            </Link>
+            <Link to={"/contact-page"} className="hover:text-[#7ED957] transition">
+              যোগাযোগ করুন
             </Link>
           </nav>
 

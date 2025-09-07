@@ -1,9 +1,12 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import landImage from "../../assets/images/land-image.webp";
+import Navbar from "../Navbar/Navbar";
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Navbar */}
+      <Navbar />
       {/* Hero Section */}
       <div
         className="relative w-full h-[250px] sm:h-[300px] flex items-center justify-center bg-cover bg-center"
