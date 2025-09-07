@@ -1,6 +1,6 @@
 const LandSurveyGuide = () => {
   return (
-    <div className="min-h-screen bg-[#F5F3ED] flex flex-col">
+    <div className="min-h-screen  flex flex-col">
       {/* Content div */}
       <div className="flex-grow px-4 sm:px-8 lg:px-16 py-10">
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6 sm:p-10 space-y-8">

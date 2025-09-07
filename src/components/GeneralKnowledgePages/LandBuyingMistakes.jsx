@@ -1,6 +1,6 @@
 const LandBuyingMistakes = () => {
   return (
-    <div className="min-h-screen bg-[#F5F3ED] px-4 py-8 flex flex-col items-center">
+    <div className="min-h-screen px-4 py-8 flex flex-col items-center">
       <div className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-6 sm:p-8">
         <h1 className="text-2xl sm:text-3xl font-bold text-[#7ED957] mb-6 text-center leading-snug">
           জমি কেনার সময় এই ভুলগুলো একদম করবেন না
