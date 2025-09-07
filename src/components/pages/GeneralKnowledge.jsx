@@ -133,7 +133,7 @@ const GeneralKnowledge = () => {
 
         {/* Content Section */}
         <div className="mt-12 px-8 md:px-20" ref={contentRef}>
-          <div className="p-8 bg-white rounded-2xl shadow-md">
+          <div className="p-8 bg-white ">
             {pages[activePage]}
           </div>
         </div>
