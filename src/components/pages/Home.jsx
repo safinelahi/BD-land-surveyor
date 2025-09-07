@@ -133,12 +133,12 @@ const Home = () => {
 
             <div className="mb-4">
               <label className="block text-[#151515] font-semibold mb-2">
-                পদবী / ভূমিকা
+                পদবী 
               </label>
               <input
                 type="text"
                 name="role"
-                placeholder="আপনার পদবী বা ভূমিকা লিখুন"
+                placeholder="আপনার পদবী লিখুন"
                 value={review.role}
                 onChange={handleChange}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7ED957]"
