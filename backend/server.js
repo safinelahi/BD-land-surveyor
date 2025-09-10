@@ -4,24 +4,24 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+import path from "path";
 
 dotenv.config();
 connectDB();
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Global CORS middleware
+// CORS
 app.use(
   cors({
     origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-// Body parsing
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Serve uploads folder
+app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
 
 // Routes
 app.use("/api/users", userRoutes);
