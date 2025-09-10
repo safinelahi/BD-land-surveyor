@@ -29,14 +29,20 @@ function Navbar() {
           <Link to={"/surveyor"} className="hover:text-[#7ED957] transition">
             সার্ভেয়ার
           </Link>
+          <Link to={"consultant"} className="hover:text-[#7ED957] transition">
+            পরামর্শদাতা
+          </Link>
           <Link to={"/about"} className="hover:text-[#7ED957] transition">
             আমাদের সম্পর্কে
           </Link>
           <Link to={"/knowledge"} className="hover:text-[#7ED957] transition">
             সাধারণ জ্ঞান
           </Link>
-          <Link to={"/contact-page"} className="hover:text-[#7ED957] transition">
-            যোগাযোগ করুন
+          <Link
+            to={"/contact-page"}
+            className="hover:text-[#7ED957] transition"
+          >
+            যোগাযোগ
           </Link>
         </nav>
 
@@ -77,13 +83,19 @@ function Navbar() {
             <Link to={"/surveyor"} className="hover:text-[#7ED957] transition">
               সার্ভেয়ার
             </Link>
+            <Link to={"consultant"} className="hover:text-[#7ED957] transition">
+              পরামর্শদাতা
+            </Link>
             <Link to={"/about"} className="hover:text-[#7ED957] transition">
               আমাদের সম্পর্কে
             </Link>
             <Link to={"/knowledge"} className="hover:text-[#7ED957] transition">
               সাধারণ জ্ঞান
             </Link>
-            <Link to={"/contact-page"} className="hover:text-[#7ED957] transition">
+            <Link
+              to={"/contact-page"}
+              className="hover:text-[#7ED957] transition"
+            >
               যোগাযোগ করুন
             </Link>
           </nav>

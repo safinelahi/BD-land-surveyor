@@ -1,7 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import Cart from "./components/cart/Cart.jsx";
+import CartSurveyor from "./components/cart/CartSurveyor.jsx";
+import CartConsultant from "./components/cart/CartConsultant.jsx";
 import About from "./components/pages/About.jsx";
 import ContactPage from "./components/pages/ContactPage.jsx";
 import Footer from "./components/pages/Footer.jsx";

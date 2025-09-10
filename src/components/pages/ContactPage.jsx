@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import landImage from "../../assets/images/land-image.webp";
+//import landImage from "../../assets/images/land-image.webp";
+import landImage2 from "../../assets/images/land-10.jpg";
 import Navbar from "../Navbar/Navbar";
 
 export default function ContactPage() {
@@ -8,14 +9,17 @@ export default function ContactPage() {
       {/* Navbar */}
       <Navbar />
       {/* Hero Section */}
-      <div
-        className="relative w-full h-[250px] sm:h-[300px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${landImage})` }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#7ED957] text-center px-4">
-          আমাদের সাথে যোগাযোগ করুন
-        </h1>
+      
+      <div className="relative px-4 sm:px-8">
+        <div
+          className="relative w-full h-[30vh] sm:h-[40vh] lg:h-[40vh] rounded-2xl overflow-hidden shadow-lg flex items-center justify-center bg-cover bg-center"
+          style={{ backgroundImage: `url(${landImage2})` }}
+        >
+          <div className="absolute inset-0 bg-black/50"></div>
+          <h1 className="relative z-10 text-3xl sm:text-5xl md:text-6xl font-bold text-[#7ED957]">
+            আমাদের সাথে যোগাযোগ করুন
+          </h1>
+        </div>
       </div>
 
       {/* Contact Info + Form */}

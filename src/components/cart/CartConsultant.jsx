@@ -1,32 +1,32 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import experienceIcon from "../../assets/icons/Experience.jpg";
 import priceIcon from "../../assets/icons/Price.jpg";
-import axios from "axios";
 
-const Cart = () => {
-  const [surveyors, setSurveyors] = useState([]);
+const CartConsultant = () => {
+  const [consultants, setConsultants] = useState([]);
 
-  // Fetch surveyors from backend
+  // Fetch consultants from backend
   useEffect(() => {
-    const fetchSurveyors = async () => {
+    const fetchConsultants = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/users/surveyors");
-        setSurveyors(data);
+        const { data } = await axios.get("http://localhost:5000/api/users/consultants"); 
+        setConsultants(data);
       } catch (error) {
-        console.error("Error fetching surveyors:", error);
+        console.error("Error fetching consultants:", error);
       }
     };
-    fetchSurveyors();
+    fetchConsultants();
   }, []);
 
-  // Reusable surveyor card
-  const SurveyorCard = ({ name, img, experience, price }) => (
+  // Reusable consultant card
+  const ConsultantCard = ({ name, img, experience }) => (
     <div className="bg-white rounded-2xl border border-[#7ed95659] overflow-hidden">
       {/* Image */}
       <div className="relative w-full h-64 pt-5 flex items-center justify-center bg-white rounded-t-2xl overflow-hidden">
         <img
-          src={img ? `data:image/jpeg;base64,${img}` : "/default-surveyor.jpg"}
+          src={img ? `data:image/jpeg;base64,${img}` : "/default-consultant.jpg"}
           alt={name}
           className="max-h-full max-w-full object-contain"
         />
@@ -44,7 +44,9 @@ const Cart = () => {
         </div>
 
         {/* Name */}
-        <h2 className="text-base sm:text-lg font-semibold text-gray-800 mt-2">{name}</h2>
+        <h2 className="text-base sm:text-lg font-semibold text-gray-800 mt-2">
+          {name}
+        </h2>
 
         {/* Experience and Price */}
         <div className="flex flex-wrap items-center my-4 gap-3 text-gray-600 text-xs sm:text-sm">
@@ -54,10 +56,10 @@ const Cart = () => {
             <span className="ml-1">{experience}</span>
           </div>
 
-          {/* Price */}
+          {/* Price - Always 1000 টাকা */}
           <div className="flex items-center">
             <img src={priceIcon} alt="" className="w-4 h-4" />
-            <span className="ml-1">{price}</span>
+            <span className="ml-1">১০০০ টাকা</span>
           </div>
         </div>
 
@@ -77,19 +79,18 @@ const Cart = () => {
   return (
     <div className="bg-[#F5F3ED]">
       <h1 className="pt-16 pb-10 text-[#151515] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center">
-        আমাদের সার্ভেয়ার সমূহ
+        আমাদের কনসালট্যান্ট সমূহ
       </h1>
 
       {/* Cards Grid */}
       <div className="px-4 sm:px-8 pb-16">
         <div className="grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {surveyors.map((surveyor) => (
-            <SurveyorCard
-              key={surveyor._id}
-              name={surveyor.name}
-              img={surveyor.profileImage}
-              experience={surveyor.experience + " বছর"}
-              price={surveyor.price? `${surveyor.price} টাকা`: "নির্ধারিত নেই"}
+          {consultants.map((consultant) => (
+            <ConsultantCard
+              key={consultant._id}
+              name={consultant.name}
+              img={consultant.profileImage}
+              experience={consultant.experience + " বছর"}
             />
           ))}
         </div>
@@ -105,4 +106,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default CartConsultant;

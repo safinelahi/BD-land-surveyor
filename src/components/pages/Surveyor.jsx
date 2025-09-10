@@ -1,6 +1,5 @@
-import React from 'react'
 import Navbar from "../Navbar/Navbar"
-import Cart from '../cart/Cart'
+import CartSurveyor from '../cart/CartSurveyor'
 
 function Surveyor() {
   return (
@@ -32,7 +31,7 @@ function Surveyor() {
           ))}
         </div>
       </section>
-      <Cart />
+      <CartSurveyor />
     </div>
     </div>
   )

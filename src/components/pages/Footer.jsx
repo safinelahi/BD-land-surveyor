@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import facebookIcon from "../../assets/icons/facebook.png";
-import instagramIcon from "../../assets/icons/instagram.png";
 import logoImage from "../../assets/icons/logo_2.png";
-import twitterIcon from "../../assets/icons/twitter.png";
 import whatsappIcon from "../../assets/icons/whatsapp.png";
 
 const Footer = () => {
@@ -12,19 +10,19 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row py-10 md:py-[8%] justify-between gap-10 md:gap-0">
         {/* Left Column */}
         <div className="text-white md:w-[47%]">
-          <img
-            src={logoImage}
-            alt="Logo"
-            className="w-32 sm:w-40 md:w-48 lg:w-56"
-          />
+          <Link to={"/"}>
+            <img
+              src={logoImage}
+              alt="Logo"
+              className="w-32 sm:w-40 md:w-48 lg:w-56"
+            />
+          </Link>
           <p className="mt-6 sm:mt-10 text-sm sm:text-base leading-relaxed">
-            ল্যান্ড ম্যানেজমেন্ট সিস্টেম। সর্বস্বত্ব সংরক্ষিত। আধুনিক প্রযুক্তির
-            মাধ্যমে ভূমি পরিচালনা সহজতর করা। যেকোনো জিজ্ঞাসার জন্য আমাদের সাথে
-            যোগাযোগ করুন [ইমেইল/ফোন]। গোপনীয়তা নীতি | পরিষেবার শর্তাবলী
+            জমি নিয়ে চিন্তা নয়! ভেরিফাইড সার্ভেয়ার খুঁজুন, এক্সপার্টদের
+            অ্যাডভাইস নিন সবকিছু এক জায়গায়। আপনার জমির Journey-কে করুন সহজ,
+            নিরাপদ ও নিশ্চিত।
           </p>
           <div className="flex mt-6 gap-6 sm:gap-8">
-            <img src={twitterIcon} alt="Twitter" className="w-6 sm:w-7" />
-
             <a
               href="https://www.facebook.com/people/Jomijog/61580029160200/?sk=about"
               target="_blank"
@@ -32,8 +30,6 @@ const Footer = () => {
             >
               <img src={facebookIcon} alt="Facebook" className="w-6 sm:w-7" />
             </a>
-
-            <img src={instagramIcon} alt="Instagram" className="w-6 sm:w-7" />
             <img src={whatsappIcon} alt="WhatsApp" className="w-6 sm:w-7" />
           </div>
         </div>
@@ -43,13 +39,34 @@ const Footer = () => {
           <h1 className="font-bold mb-4 text-base sm:text-lg">
             গুরুত্বপূর্ণ লিঙ্ক
           </h1>
-          <div className="space-y-2 text-sm sm:text-base">
-            <p>হোম</p>
-            <p>সার্ভেয়ার</p>
-            <p>পূর্বের সার্ভেয়ার</p>
-            <p>আমাদের সম্পর্কে</p>
-            <p>জ্ঞাতব্য</p>
-            <p>লগইন</p>
+          <div className="space-y-2 text-sm sm:text-base flex flex-col">
+            <Link to="/" className="hover:text-[#7ED957] transition">
+              হোম
+            </Link>
+            <Link to="/surveyor" className="hover:text-[#7ED957] transition">
+              সার্ভেয়ার
+            </Link>
+            <Link to={"consultant"} className="hover:text-[#7ED957] transition">
+              পরামর্শদাতা
+            </Link>
+            <Link to="/about" className="hover:text-[#7ED957] transition">
+              আমাদের সম্পর্কে
+            </Link>
+            <Link to="/knowledge" className="hover:text-[#7ED957] transition">
+              সাধারণ জ্ঞান
+            </Link>
+            <Link
+              to="/contact-page"
+              className="hover:text-[#7ED957] transition"
+            >
+              যোগাযোগ
+            </Link>
+            <Link to="/login" className="hover:text-[#7ED957] transition">
+              লগইন
+            </Link>
+            <Link to="/login" className="hover:text-[#7ED957] transition">
+              LogIn As a Admin
+            </Link>
           </div>
         </div>
 
@@ -77,6 +94,12 @@ const Footer = () => {
               className="px-4 py-2 bg-blue-500 text-white rounded-lg text-center hover:bg-blue-600 transition"
             >
               Transactions Page
+            </Link>
+            <Link
+              to="/admin-surveyors"
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg text-center hover:bg-blue-600 transition"
+            >
+              Surveyors
             </Link>
           </div>
         </div>

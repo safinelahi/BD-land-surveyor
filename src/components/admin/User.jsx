@@ -120,10 +120,16 @@ const UserPage = () => {
       <div className="flex justify-center mb-6">
         <div className="flex flex-wrap bg-[#69DB7C] rounded-2xl px-6 sm:px-12 lg:px-20 py-3 sm:py-5 gap-3 sm:gap-6">
           <Link
-            to="/"
+            to="/users"
             className="px-4 py-2 text-base sm:text-lg lg:text-2xl rounded-full bg-white font-semibold"
           >
             User
+          </Link>
+          <Link
+            to="/admin-surveyors"
+            className="px-4 py-2 text-base sm:text-lg lg:text-2xl rounded-full transition duration-200 hover:bg-white"
+          >
+            Surveyor
           </Link>
           <Link
             to="/transactions"

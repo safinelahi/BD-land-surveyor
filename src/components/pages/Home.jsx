@@ -1,8 +1,11 @@
 import { useState } from "react";
-import heroImage1 from "../../assets/images/hero page.jpg";
-import Cart from "../cart/Cart";
+import { Link } from "react-router-dom";
+//import heroImage1 from "../../assets/images/hero page.jpg";
+import demo from "../../assets/images/demo-9.png";
+import CartSurveyor from "../cart/CartSurveyor";
 import Navbar from "../Navbar/Navbar";
 import UserFeedback from "../UserFeedback/UserFeedback";
+import FAQ from "./FAQ";
 
 const Home = () => {
   const [showAddReview, setShowAddReview] = useState(false);
@@ -33,9 +36,9 @@ const Home = () => {
 
       {/* Hero Section */}
       <div className="relative px-4 sm:px-8">
-        <div className="relative w-full h-[40vh] sm:h-[55vh] lg:h-[70vh] rounded-2xl overflow-hidden shadow-lg">
+        <div className="relative w-full h-[40vh] sm:h-[55vh] lg:h-[70vh] rounded-2xl overflow-hidden  shadow-lg">
           <img
-            src={heroImage1}
+            src={demo}
             alt="Hero"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />
@@ -45,12 +48,14 @@ const Home = () => {
               যখনই প্রয়োজন, <br /> খুঁজুন বিশ্বস্ত সার্ভেয়ার
             </h2>
             <p className="text-sm sm:text-base md:text-lg mb-6 max-w-[480px] ">
-              বুকিং থেকে সার্ভে পর্যন্ত, জমিযোগ আনছে জমি সেবা অনলাইনে— নিরাপদ,
+              বুকিং থেকে সার্ভে পর্যন্ত, জমিযোগ আনছে জমি সেবা অনলাইনে নিরাপদ,
               দ্রুত ও বিশ্বস্ত।
             </p>
-            <button className="px-8 py-3 sm:px-10 sm:py-4 bg-[#7ED957] text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300">
-              সার্ভেয়ার বুক করুন
-            </button>
+            <Link to={"/surveyor"}>
+              <button className="px-8 py-3 sm:px-10 sm:py-4 bg-[#7ED957] text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300">
+                সার্ভেয়ার বুক করুন
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -81,24 +86,19 @@ const Home = () => {
         </div>
       </section>
 
-      <Cart />
-
-      {/* User Feedback Section */}
-      <UserFeedback />
+      <CartSurveyor />
 
       {/* User Reviews Section */}
       <div className="bg-[#F5F3ED] px-4 sm:px-8 text-center py-8">
-        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-[#151515] mb-4">
-          ক্লায়েন্টের পর্যালোচনা
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-[#151515] mb-6">
+          ক্লায়েন্টের মতামত
         </h2>
-        <p className="text-sm sm:text-base md:text-lg mb-6 max-w-[600px] mx-auto text-[#303030]">
-          আমাদের ক্লায়েন্টরা তাদের অভিজ্ঞতা সম্পর্কে যা বলছেন তা শুনুন
-        </p>
+
         <button
           onClick={() => setShowAddReview(!showAddReview)}
           className="px-8 py-3 sm:px-10 sm:py-4 bg-[#7ED957] text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300"
         >
-          {showAddReview ? "বাতিল করুন" : "আপনার পর্যালোচনা যোগ করুন"}
+          {showAddReview ? "বাতিল করুন" : "আপনার মতামত যোগ করুন"}
         </button>
       </div>
 
@@ -106,7 +106,7 @@ const Home = () => {
       {showAddReview && (
         <div className=" bg-[#F5F3ED] px-4 sm:px-8 md:px-16 py-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center text-[#151515]">
-            আপনার পর্যালোচনা জমা দিন
+            আপনার মতামত জমা দিন
           </h2>
           <p className="text-sm sm:text-base md:text-lg mb-8 text-center text-[#303030] max-w-[700px] mx-auto">
             আমাদের সার্ভিসের অভিজ্ঞতা শেয়ার করুন। আপনার মতামত আমাদের জন্য
@@ -133,12 +133,12 @@ const Home = () => {
 
             <div className="mb-4">
               <label className="block text-[#151515] font-semibold mb-2">
-                পদবী 
+                পেশা
               </label>
               <input
                 type="text"
                 name="role"
-                placeholder="আপনার পদবী লিখুন"
+                placeholder="আপনার পেশা লিখুন"
                 value={review.role}
                 onChange={handleChange}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7ED957]"
@@ -147,7 +147,7 @@ const Home = () => {
 
             <div className="mb-4">
               <label className="block text-[#151515] font-semibold mb-2">
-                পর্যালোচনা
+                পর্যালোচনা / প্রশ্ন
               </label>
               <textarea
                 name="feedback"
@@ -180,14 +180,19 @@ const Home = () => {
                 type="submit"
                 className="px-8 py-3 sm:px-10 sm:py-4 bg-[#7ED957] text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300"
               >
-                পর্যালোচনা জমা দিন
+                মতামত জমা দিন
               </button>
             </div>
           </form>
         </div>
       )}
-      
 
+      {/* User Feedback Section */}
+      <UserFeedback /> 
+      
+      {/* FAQ section or page */}
+
+      <FAQ />
     </div>
   );
 };
