@@ -1,11 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import logoImage from "../../assets/icons/logo_2.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  // Load user info on mount
+  useEffect(() => {
+    const storedUser = localStorage.getItem("userInfo");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+
+    // Listen for login/logout changes
+    const syncUser = () => {
+      const updatedUser = localStorage.getItem("userInfo");
+      setUser(updatedUser ? JSON.parse(updatedUser) : null);
+    };
+
+    window.addEventListener("storage", syncUser);
+    return () => window.removeEventListener("storage", syncUser);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("userInfo");
+    setUser(null);
+    window.dispatchEvent(new Event("storage")); // notify others
+    navigate("/login");
+  };
+
   return (
     <div>
       {/*  Navbar  */}
@@ -46,7 +73,7 @@ function Navbar() {
           </Link>
         </nav>
 
-        {/* Search + Login (desktop) */}
+        {/* Search + Login/Logout (desktop) */}
         <div className="hidden md:flex items-center gap-3">
           <div className="flex items-center w-64 bg-[#f5f5eb] rounded-lg px-3 py-2 border border-gray-200">
             <FiSearch className="text-gray-500 mr-2 text-lg" />
@@ -56,11 +83,21 @@ function Navbar() {
               className="bg-transparent focus:outline-none text-gray-700 w-full text-base"
             />
           </div>
-          <Link to={"/login"}>
-            <button className="text-white font-semibold text-base bg-[#7ED957] px-6 py-3 rounded-lg hover:opacity-90 transition">
-              লগইন
+
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="text-white font-semibold text-base bg-red-500 px-6 py-3 rounded-lg hover:opacity-90 transition"
+            >
+              লগআউট
             </button>
-          </Link>
+          ) : (
+            <Link to={"/login"}>
+              <button className="text-white font-semibold text-base bg-[#7ED957] px-6 py-3 rounded-lg hover:opacity-90 transition">
+                লগইন
+              </button>
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -100,7 +137,7 @@ function Navbar() {
             </Link>
           </nav>
 
-          {/* Search + Login (mobile) */}
+          {/* Search + Login/Logout (mobile) */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center w-full bg-[#f5f5eb] rounded-lg px-3 py-2 border border-gray-200">
               <FiSearch className="text-gray-500 mr-2 text-lg" />
@@ -110,11 +147,21 @@ function Navbar() {
                 className="bg-transparent focus:outline-none text-gray-700 w-full text-sm"
               />
             </div>
-            <Link to={"/login"}>
-              <button className="text-white font-semibold text-sm bg-[#7ED957] px-4 py-2 rounded-lg hover:opacity-90 transition shadow-md">
-                লগইন
+
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="text-white font-semibold text-sm bg-red-500 px-4 py-2 rounded-lg hover:opacity-90 transition shadow-md"
+              >
+                লগআউট
               </button>
-            </Link>
+            ) : (
+              <Link to={"/login"}>
+                <button className="text-white font-semibold text-sm bg-[#7ED957] px-4 py-2 rounded-lg hover:opacity-90 transition shadow-md">
+                  লগইন
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       )}
